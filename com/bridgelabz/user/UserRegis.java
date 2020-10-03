@@ -22,6 +22,11 @@ public class UserRegis {
 		System.out.println("Please enter first name");
 		String fname = sc.next();
 		firstname(fname);
+		
+		// Last Name Input
+		System.out.println("Please enter first name");
+		String lname = sc.next();
+		firstname(lname);
 
 	}
 }

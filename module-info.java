@@ -1,2 +1,3 @@
 module LambdaExpression {
+	requires junit;
 }

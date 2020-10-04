@@ -17,9 +17,10 @@ public class UserRegis {
 			System.out.println("Entered name is not valid");
 		}
 	}
-	
+
 	private static void email(String mail) {
-		Pattern pattern = Pattern.compile("\"^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*@([0-9a-zA-Z][-]?)+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$\"");
+		Pattern pattern = Pattern.compile(
+				"\"^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*@([0-9a-zA-Z][-]?)+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$\"");
 		Matcher matcher = pattern.matcher(mail);
 		if (matcher.matches() == true) {
 			System.out.println("Entered email is valid");
@@ -27,8 +28,17 @@ public class UserRegis {
 			System.out.println("Entered email is invalid");
 		}
 	}
-			
-	
+
+	private static void mobile(String mobile) {
+		Pattern pattern = Pattern.compile("^[1-9][0-9]\s[1-9][0-9]{9}");
+		Matcher matcher = pattern.matcher(mobile);
+		if (matcher.matches() == true) {
+			System.out.println("Entered number is valid");
+		} else {
+			System.out.println("Entered number is invalid");
+		}
+
+	}
 
 	public static void main(String[] args) {
 		// First Name input
@@ -40,13 +50,17 @@ public class UserRegis {
 		System.out.println("Please enter first name");
 		String lname = sc.next();
 		firstname(lname);
-		
-		//Email input
+
+		// Email input
 		System.out.println("Please enter email");
 		String mail = sc.next();
 		email(mail);
 
+		// Mobile Number Input
+		System.out.println("Please enter mobile number");
+		String mobile = sc.next();
+		mobile(mobile);
+
 	}
 
-	
 }
